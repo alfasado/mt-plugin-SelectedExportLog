@@ -21,9 +21,8 @@ sub _export_log {
     my @ids;
     if ( $app->param( 'all_selected' ) ) {
         $app->setup_filtered_ids;
-    } else {
-        @ids = $app->param( 'id' );
     }
+    @ids = $app->param( 'id' );
     my $iter = MT->model( 'log' )->load_iter( { id => \@ids } );
     my $log_class  = $app->model('log');
     my $blog_class = $app->model('blog');
