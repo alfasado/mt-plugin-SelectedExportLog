@@ -11,16 +11,8 @@ list_actions:
     log:
         selected_export_log:
             label: Download Log (CSV)
-            mode: selected_export_log
-            code: $SelectedExportLog::SelectedExportLog::Plugin::__export_log
-            return_args: 1
+            code: $SelectedExportLog::SelectedExportLog::Plugin::_export_log
             order: 100
             condition: $SelectedExportLog::SelectedExportLog::Plugin::_condition_export_log
             button: 1
             js_message_handler: $SelectedExportLog::SelectedExportLog::Plugin::_message_export_log
-
-applications:
-    cms:
-        methods:
-            selected_export_log: $SelectedExportLog::SelectedExportLog::Plugin::_export_log
-
